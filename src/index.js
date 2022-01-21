@@ -6,7 +6,7 @@ import logger from "redux-logger";
 import thunk from "redux-thunk";
 import "./index.css";
 import App from "./App";
-import { reducer } from "./reducers";
+import reducer from "./reducers";
 
 const { worker } = require('./mocks/browser');
 worker.start();
