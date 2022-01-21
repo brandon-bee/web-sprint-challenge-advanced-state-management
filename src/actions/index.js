@@ -15,20 +15,20 @@ export const fetchSmurfs = () => {
       })
       .catch(err => {
         dispatch(addError(err));
-        dispatch(fetchFail())
+        dispatch(fetchFail());
       })
   };
 };
 
-export const fetchStart = () => {
+const fetchStart = () => {
   return({type: FETCH_START});
 };
 
-export const fetchFail = () => {
+const fetchFail = () => {
   return({type: FETCH_FAIL});
 };
 
-export const fetchSuccess = (smurfs) => {
+const fetchSuccess = (smurfs) => {
   return({type: FETCH_SUCCESS, payload: smurfs});
 };
 
@@ -36,7 +36,7 @@ export const addSmurf = (smurf) => {
   return({type: ADD_SMURF, payload: smurf});
 };
 
-const addError = (err) => {
+export const addError = (err) => {
   return({type: ADD_ERROR, payload: err});
 };
 //Task List:
