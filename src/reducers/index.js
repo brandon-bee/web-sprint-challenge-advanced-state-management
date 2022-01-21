@@ -32,7 +32,7 @@ const reducer = (state = initialState, action) => {
     case ADD_SMURF:
       return({
         ...state,
-        smurfs: [...state.smurfs, action.payload]
+        smurfs: [...state.smurfs, {...action.payload, id: Date.now()}]
       })
     case ADD_ERROR:
       return({
@@ -43,10 +43,8 @@ const reducer = (state = initialState, action) => {
       return state;
   };
 };
-
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
 export default reducer;
-
 //Task List:
 //1. Adds the following state values into the initialState:
 //  - an array of smurfs

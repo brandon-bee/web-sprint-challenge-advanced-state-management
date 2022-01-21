@@ -7,9 +7,7 @@ import { fetchSmurfs } from './actions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-const App = (props) => {
-  const { fetchSmurfs } = props;
-
+const App = ({ fetchSmurfs }) => {
   useEffect(() => {
     fetchSmurfs();
   }, []);
@@ -18,7 +16,7 @@ const App = (props) => {
     <div className="App">
       <Header />
       <main>
-        <SmurfList/>
+        <SmurfList />
         <AddForm/>
       </main>
     </div>

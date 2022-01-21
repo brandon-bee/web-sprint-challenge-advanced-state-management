@@ -9,14 +9,13 @@ export const ADD_ERROR = "ADD_ERROR";
 export const fetchSmurfs = () => {
   return(dispatch) => {
     dispatch(fetchStart());
-    axios.get("http://localhost:3333/smurfs/")
+    axios.get("http://localhost:3333/smurfs")
       .then(resp => {
-        console.log(resp.data);
-        dispatch({type: fetchSuccess(resp.data)});
+        dispatch(fetchSuccess(resp.data));
       })
       .catch(err => {
-        dispatch({type: addError(err)});
-        dispatch({type: fetchFail()})
+        dispatch(addError(err));
+        dispatch(fetchFail())
       })
   };
 };
